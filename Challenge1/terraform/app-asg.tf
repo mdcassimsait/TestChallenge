@@ -48,8 +48,8 @@ resource "aws_launch_configuration" "app" {
               wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
               sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
               yum install -y apache-maven
-              git clone https://github.com/tellisnz/terraform-aws.git
-              cd terraform-aws/sample-web-app/server
+              git clone git@github.com:mdcassimsait/KPMGChallenge.git
+              cd KPMGChallenge/Challenge1/sample-web-app/server
               nohup mvn spring-boot:run -Dspring.datasource.url=jdbc:postgresql://"${module.rds.this_db_instance_address}:${var.db_port}/" -Dspring.datasource.username="${var.db_username}" -Dspring.datasource.password="${var.db_password}" -Dserver.port="${var.app_port}" &> mvn.out &
               EOF
 
