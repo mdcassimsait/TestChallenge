@@ -1,2 +1,2 @@
-# KPMGChallenge
+# Challenge
 Demo Challenges
